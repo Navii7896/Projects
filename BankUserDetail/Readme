@@ -73,5 +73,22 @@ delete(destroy).
 Check the data in DATABASE.
 
 
+-------------------------------updating details to a git--------------------
+
+
+open file in git_workspace
+
+
+git status
+
+git add ./
+
+git commit -m "updated"
+
+git push
+
+user_name:
+pW or tokenid:
+
 
 
