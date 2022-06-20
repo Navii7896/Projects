@@ -1,0 +1,77 @@
+ 
+ Build a  Rest api using node.js sequelize mysql.#
+
+ Project name:Bank user details
+
+ 
+
+-------------------------------AS SUDO USER CREAT A OWN USER--------------
+
+SUDO MYSQL
+
+CREATE USER 'NAVEEN'@'localhost' IDENTIFIED BY 'Naveen123'; ----------CREATING A USER
+
+GRANT ALL PRIVILAGES TO TRHE USER.
+
+FLUSH PRIVILAGES.#
+
+------------------------------LOGIN FROM CREATED USER NAME---------------
+
+MYSQL -U NAVEEN -P
+
+PASSWORD
+
+------------------------------CREATE A DATA BASE-------------------------
+
+CREATE DATABASE NAVEENDB;
+
+SHOW DATABASE;
+
+--------------------------OPEN MY SQL TO SET UP NEW CONNECTION----------
+---------------------------CHECK THE DATABSE APPEARANCE---------------
+
+
+------------------------------CREATE A NODE APPLICATION-------------------
+
+
+CD Project
+MKDIR BankUserDetails
+cd BankUserDetails
+code .
+
+-------------------------------DOWNLOAD NEEDED FILES--------------
+
+npm init -y
+
+npm i express sequelize mysql2 body-parser.----------------importing the express,sequelize and body-parser.
+
+npm i _D nodemon----------to run the code.#
+
+------------------------------creating a server------------------------------
+
+
+for run our server application using listen() running our server use npx nodemon index.js.#
+
+sending some req to the server using GET.
+
+body-parser here  we are give urlencoded because  get the data in the body or encoded form 
+
+
+---------------------------sequelize ------------------------------------
+
+
+Sequelize we are using for  connection with databse  using sequelize then database name ,username and password finaly it take dialect:mysql.#
+
+The we have to perform the crud opration useing POSTMAN 
+
+create (post)
+read (get)
+update (pull)
+delete(destroy).
+
+
+Check the data in DATABASE.
+
+
+
+
