@@ -1,18 +1,28 @@
+//importing express,app,bodyparser,sequelize modules and declare port
+
+
+
 const express = require('express');
-const app = express();
+const Var = express();  //middle ware modules.
 const bodyParser = require("body-parser");
 const Sequelize = require("sequelize");
 const port=7003;
 
+
+
 //configure the body parser
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
+
+Var.use(bodyParser.json())
+Var.use(bodyParser.urlencoded({extended:false}))   //here we have to use urlencoded to get the data in enodede form.
+
 
 
 // connecting with database
 
-const sequelize = new Sequelize("NAVEENDB", "NAVEEN", "naveen@123", {dialect: "mysql",})
+
+
+const sequelize = new Sequelize("NAVEENDB", "NAVEEN", "naveen@123", {dialect: "mysql",})// dialect generate sql query
 
 sequelize.authenticate().then(() =>{
     console.log('connection made succefully')})
@@ -20,6 +30,7 @@ sequelize.authenticate().then(() =>{
 
 
 //creating a table
+
 
 const BankUserDetails = sequelize.define('BankUserDetails',{
 
@@ -29,21 +40,29 @@ const BankUserDetails = sequelize.define('BankUserDetails',{
     Salary:Sequelize.INTEGER
 },{tableName:"BankUserDetails"});
 
-BankUserDetails.sync();
+
+
+//  return BankUserDetails;
+
+
+
+
+BankUserDetails.sync();  //sync is user generate table in mysql
+
 
 
 //getting simple req
 
  
-app.get("/" ,(req, res) => {
-    res.send('it is my first server');
-})
+// app.get("/" ,(req, res) => {
+//     res.send('it is my first server');
+// })
 
 
 /////post/////////Inserting data to a table
 
 
-app.post('/',async(req, res)=>{
+Var.post('/',async(req, res)=>{
     const username = req.body.username;
     const Job = req.body.Job;
     const WorkingHours= req.body.WorkingHours;
@@ -58,15 +77,15 @@ app.post('/',async(req, res)=>{
 ///////get//////////
 
 
-app.get("/",async(req, res) =>{
-    const alldata =  BankUserDetails.findAll();
+Var.get("/",async(req, res) =>{
+    const alldata = await BankUserDetails.findAll();// whenever we dealing with any third party application we hae to use async.
     res.json(alldata)
 });
 
 
 ////////put/////////////////
 
-app.put("/:id", (req, res) => {
+Var.put("/:id", (req, res) => {m
     const data = req.body.data;
     BankUserDetails.update(
     {
@@ -78,13 +97,13 @@ app.put("/:id", (req, res) => {
     },
     }
     );
-    res.redirect("/"); 
+    res.redirect("/"); //it will redirect to home page
     });
 
 
 ////////Delete////////////
 
-app.delete("/:id", (req, res) => {
+Var.delete("/:id", (req, res) => {
     BankUserDetails.destroy(
     {
     where: {
@@ -100,6 +119,6 @@ app.delete("/:id", (req, res) => {
 
 //creating server
 
-app.listen(port,()=>{
+Var.listen(port,()=>{
     console.log('server starts at http://localhost:${port}')
     });

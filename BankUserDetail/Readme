@@ -1,76 +1,98 @@
  
- Build a  Rest api using node.js sequelize mysql.#
+ Build a  Rest api using node.js sequelize mysql2.
 
  Project name:Bank user details
 
- 
+1)Create our own user as Sudo code.
+-----------------------------------
 
--------------------------------AS SUDO USER CREAT A OWN USER--------------
+sudo mysql
+select User,host from mysql.user;
+CREATE USER 'NAVEEN'@'localhost' IDENTIFIED by 'Naveen123';
 
-SUDO MYSQL
+2)grant all the privileges.
+---------------------------
 
-CREATE USER 'NAVEEN'@'localhost' IDENTIFIED BY 'Naveen123'; ----------CREATING A USER
+GRANT ALL PRIVILEGES;
+FLUSH PRIVILEGES;
 
-GRANT ALL PRIVILAGES TO TRHE USER.
+3)Login from the created user.
+------------------------------
 
-FLUSH PRIVILAGES.#
+user:mysql -u NAVEEN -p
+Password:
 
-------------------------------LOGIN FROM CREATED USER NAME---------------
-
-MYSQL -U NAVEEN -P
-
-PASSWORD
-
-------------------------------CREATE A DATA BASE-------------------------
+4)create a databse:
+------------------
 
 CREATE DATABASE NAVEENDB;
-
 SHOW DATABASE;
 
---------------------------OPEN MY SQL TO SET UP NEW CONNECTION----------
----------------------------CHECK THE DATABSE APPEARANCE---------------
+5)setup the connection in mysql:
+--------------------------------
+
+6)Create a folder:
+-----------------
+cd Project;
+mkdir BankUserDetails;
+cd BankUserDetails;
+
+7)create node Application:
+--------------------------
+
+npm init -y;
+touch index.js;
+
+8)install some packages:
+-----------------------
+
+npm i express sequelize mysql2 body-parser
+mpm i -D nodemon
+
+to check: npx nodemon index.js
 
 
-------------------------------CREATE A NODE APPLICATION-------------------
+9)import all express,bodyparser,sequelie modules.
+-------------------------------------------------
+
+10)declare the port number.
+--------------------------
+
+11)setup the express js webserver:
+----------------------------------
+
+12)write simple get request:
+-----------------------------
 
 
-CD Project
-MKDIR BankUserDetails
-cd BankUserDetails
-code .
-
--------------------------------DOWNLOAD NEEDED FILES--------------
-
-npm init -y
-
-npm i express sequelize mysql2 body-parser.----------------importing the express,sequelize and body-parser.
-
-npm i _D nodemon----------to run the code.#
-
-------------------------------creating a server------------------------------
+13)download postman:
+---------------------
 
 
-for run our server application using listen() running our server use npx nodemon index.js.#
-
-sending some req to the server using GET.
-
-body-parser here  we are give urlencoded because  get the data in the body or encoded form 
+14)using perticular URL check the request:
+-------------------------------------------
 
 
----------------------------sequelize ------------------------------------
+15)configure the body-parser:
+-----------------------------
 
 
-Sequelize we are using for  connection with databse  using sequelize then database name ,username and password finaly it take dialect:mysql.#
-
-The we have to perform the crud opration useing POSTMAN 
-
-create (post)
-read (get)
-update (pull)
-delete(destroy).
+16)establish connection with databse:
+-------------------------------------
 
 
-Check the data in DATABASE.
+17)authenticate the connection:
+-------------------------------
+
+
+18)create a table and sync to the database:
+-------------------------------------------
+
+
+19)perform CRUD operation using postman;
+----------------------------------------
+
+
 
 
 -------------------------------updating details to a git--------------------
