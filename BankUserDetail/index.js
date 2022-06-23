@@ -1,3 +1,4 @@
+
 //importing express,app,bodyparser,sequelize modules and declare port
 
 
@@ -6,7 +7,7 @@ const express = require('express');
 const Var = express();  //middle ware modules.
 const bodyParser = require("body-parser");
 const Sequelize = require("sequelize");
-const port=7003;
+const port=7013;
 
 
 
@@ -14,15 +15,14 @@ const port=7003;
 
 
 Var.use(bodyParser.json())
-Var.use(bodyParser.urlencoded({extended:false}))   //here we have to use urlencoded to get the data in enodede form.
+Var.use(bodyParser.urlencoded({extended:false}))   //here we have to use urlencoded to get the data in encoded form.
 
 
 
 // connecting with database
 
 
-
-const sequelize = new Sequelize("NAVEENDB", "NAVEEN", "naveen@123", {dialect: "mysql",})// dialect generate sql query
+const sequelize = new Sequelize("NAVEENDB", "NAVEEN", "naveen@123", {dialect: "mysql",})
 
 sequelize.authenticate().then(() =>{
     console.log('connection made succefully')})
@@ -38,7 +38,7 @@ const BankUserDetails = sequelize.define('BankUserDetails',{
     Job:Sequelize.TEXT,
     WorkingHours:Sequelize.FLOAT,
     Salary:Sequelize.INTEGER
-},{tableName:"BankUserDetails"});
+},{Name:"BankUserDetails"});
 
 
 

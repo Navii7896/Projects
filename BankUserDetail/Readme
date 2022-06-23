@@ -1,10 +1,13 @@
  
- Build a  Rest api using node.js sequelize mysql2.
+ "Build a  Rest api using node.js sequelize mysql2."
+ ---------------------------------------------------
 
- Project name:Bank user details
+   Project name:Bank user details.
+   -------------------------------
 
-1)Create our own user as Sudo code.
------------------------------------
+
+1)Create our own user using Sudo code user.
+------------------------------------------
 
 sudo mysql
 select User,host from mysql.user;
@@ -17,12 +20,12 @@ GRANT ALL PRIVILEGES;
 FLUSH PRIVILEGES;
 
 3)Login from the created user.
-------------------------------
+-----------------------------
 
 user:mysql -u NAVEEN -p
 Password:
 
-4)create a databse:
+4)create a database:
 ------------------
 
 CREATE DATABASE NAVEENDB;
@@ -52,7 +55,7 @@ mpm i -D nodemon
 to check: npx nodemon index.js
 
 
-9)import all express,bodyparser,sequelie modules.
+9)import all express,bodyparser,sequelize modules.
 -------------------------------------------------
 
 10)declare the port number.
@@ -62,15 +65,14 @@ to check: npx nodemon index.js
 ----------------------------------
 
 12)write simple get request:
------------------------------
-
+---------------------------
 
 13)download postman:
----------------------
+--------------------
 
 
 14)using perticular URL check the request:
--------------------------------------------
+------------------------------------------
 
 
 15)configure the body-parser:
